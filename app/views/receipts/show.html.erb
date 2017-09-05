@@ -1,0 +1,10 @@
+<p> Thank you for completing your purchase.</p>
+
+<p>Order Summary</p>
+<p>Items</p>
+<%- @order.line_items.each do |li| %>
+  <p><%= li.product.name %></p>
+<% end %>
+
+<p>Total: <%= number_to_currency(@order.amount) %></p>
+

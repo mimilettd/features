@@ -1,0 +1,1 @@
+Fabricator :line_item
