@@ -1,11 +1,3 @@
 <%= form_for @order do |f| %>
-  <p>
-    <%= f.fields_for :line_items do |ff| %>
-      <%= ff.label :product_id, "Product" %>
-      <%= ff.select :product_id, products.map { |p| [p.name, p.id] } %>
-    <% end %>
-  </p>
-  <p>
-    <%= f.submit "Purchase" %>
-  </p>
+  <%= render partial: "form", locals: { f: f } %>
 <% end %>

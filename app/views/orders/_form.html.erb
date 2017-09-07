@@ -1,0 +1,20 @@
+<%= render partial: "error_messages", locals: { object: @order } %>
+
+<p>
+  <%= f.fields_for :line_items do |ff| %>
+    <%- products.each do |product| %>
+      <%= ff.label :product_id, product.name, for: "order_line_items_attributes_0_product_id_#{product.id}" do %>
+        <span><%= product.name %> <%= price_of(product) %></span>
+      <% end %>
+      <%= ff.radio_button :product_id, product.id, data: { price: price_of(product), dimensions: product.dimensions } %>
+    <% end %>
+  <% end %>
+</p>
+
+<div id="product_details"></div>
+
+<p><%= link_to 'Add To Cart', '#', id: 'add_to_cart' %></p>
+
+<div id="cart"></div>
+
+<p><%= f.submit 'Checkout' %>

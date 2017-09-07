@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+div#product_details b {
+  margin-right: 20px;
+}
