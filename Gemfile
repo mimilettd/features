@@ -44,7 +44,6 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'pry-rails'
   gem 'pry'
-  gem 'database_cleaner'
 end
 
 group :development do
@@ -60,6 +59,7 @@ group :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'poltergeist'
+  gem "launchy", "~> 2.1.2"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
