@@ -5,24 +5,16 @@ Feature: Customer views items in cart grouped by product
 
 Scenario:
   Given the following products:
-   | name  | cost   |
-   | Twin  | 325.00 |
-   | Queen | 575.00 |
-   | King  | 700.00 |
+   | name           | cost   |
+   | Twin Mattress  | 325.00 |
+   | Queen Mattress | 575.00 |
+   | King Mattress  | 700.00 |
   And I am on the new order page
 
-  When I select "King Mattress $700.00"
-  And I click "Add to Cart"
+  When I choose "King Mattress $700.00"
+  And I click "Add To Cart"
   Then I should see "King Mattress $700.00" in my shopping cart
 
-  When I select "King Mattress $700.00"
-  And I click "Add to Cart"
-  Then I should see "(2) King Mattress $1400.00" in my shopping cart
-
-  When I select "King Mattress $700.00"
-  And I click "Add to Cart"
-  Then I should see "King Mattress $700.00" in my shopping cart
-
-  When I select "King Mattress $700.00"
-  And I click "Add to Cart"
+  When I choose "King Mattress $700.00"
+  And I click "Add To Cart"
   Then I should see "(2) King Mattress $1400.00" in my shopping cart
