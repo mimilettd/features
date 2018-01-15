@@ -23,3 +23,8 @@ Then(/^I should see "([^"]*)" in my shopping cart$/) do |txt|
     page.assert_text txt
   end
 end
+
+Then(/^I should see a list in the following format:$/) do |table|
+  # table is a Cucumber::MultilineArgument::DataTable
+  pending # Write code here that turns the phrase above into concrete actions
+end
