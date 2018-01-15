@@ -3,5 +3,7 @@ Rails.application.routes.draw do
     resource :receipt
   end
 
+  resources :dashboard, only: [:index]
+
   root to: 'dashboard#show'
 end
