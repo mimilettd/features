@@ -26,7 +26,7 @@ $ ->
       $('#' + product_name).replaceWith("<span id='#{product_name}' quantity='#{quantity}'>(#{quantity}) #{product[0]}</span>")
       $('#' + product_name + 'price').replaceWith("<span id='#{product_name}price'>#{updated_product_price.toFixed(2)}</span>")
     else
-      $("#cart").append("<span id='#{product_name}' quantity='1'>#{product[0]}</span> <span id='#{product_name}price'>#{product_price}</span></br>")
+      $("#cart").append("<span id='#{product_name}' quantity='1'>#{product[0]}</span> $<span id='#{product_name}price'>#{product_price}</span></br>")
 
     $.each($form.find("input:hidden"), (index, value) ->
       $(this).attr('name', $(this).attr('name').replace(/\d+/g, index))

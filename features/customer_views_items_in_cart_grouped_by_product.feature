@@ -1,3 +1,4 @@
+@javascript
 Feature: Customer views items in cart grouped by product 
   As a customer adding multiple items to my shopping cart
   I want to see the products I've added, that are the same, grouped together

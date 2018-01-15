@@ -19,7 +19,7 @@ Then(/^I should see "([^"]*)"$/) do |txt|
 end
 
 Then(/^I should see "([^"]*)" in my shopping cart$/) do |txt|
-  within('div#cart') do
+  within('#cart') do
     page.assert_text txt
   end
 end
