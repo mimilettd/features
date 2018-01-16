@@ -33,3 +33,27 @@ Then(/^I should see a list in the following format:$/) do |table|
 
   assert page.has_css?("#orders tr", :count=>6)
 end
+
+Then(/^I should see the sales channel 'Online' reflected$/) do
+  within('#sales-channel') do
+    page.assert_text 'Online'
+    page.assert_no_text 'CX'
+    page.assert_no_text 'Retail'
+  end
+end
+
+Then(/^I should see the sales channel 'CX' reflected$/) do
+  within('#sales-channel') do
+    page.assert_text 'CX'
+    page.assert_no_text 'Online'
+    page.assert_no_text 'Retail'
+  end
+end
+
+Then(/^I should see the sales channel 'Retail' reflected$/) do
+  within('#sales-channel') do
+    page.assert_text 'Retail'
+    page.assert_no_text 'CX'
+    page.assert_no_text 'Online'
+  end
+end
