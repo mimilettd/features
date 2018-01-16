@@ -1,5 +1,5 @@
 class DashboardController < ApplicationController
   def index
-    @orders = Order.all
+    @orders = Order.all.decorate
   end
 end
