@@ -15,13 +15,19 @@ Given(/^five recent orders$/) do
 end
 
 Given(/^an order placed Online$/) do
-  Order.create(amount: 325.00, customer: @jane, sales_channel: 0)
+  twin = Product.create(name: "Twin Mattress", cost: 325.00)
+  @order = Order.create(amount: 325.00, customer: @jane, sales_channel: 0)
+  LineItem.create(order: @order, product: twin)
 end
 
 Given(/^an order placed by a customer service representative$/) do
-  Order.create(amount: 575.00, customer: @mimi, sales_channel: 1)
+  queen = Product.create(name: "Queen Mattress", cost: 575.00)
+  @order = Order.create(amount: 575.00, customer: @mimi, sales_channel: 1)
+  LineItem.create(order: @order, product: queen)
 end
 
 Given(/^an order placed in a retail location$/) do
-  Order.create(amount: 700.00, customer: @john, sales_channel: 2)
+  king = Product.create(name: "King Mattress", cost: 700.00)
+  @order = Order.create(amount: 700.00, customer: @john, sales_channel: 2)
+  LineItem.create(order: @order, product: king)
 end
