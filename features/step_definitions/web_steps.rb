@@ -25,12 +25,11 @@ Then(/^I should see "([^"]*)" in my shopping cart$/) do |txt|
 end
 
 Then(/^I should see a list in the following format:$/) do |table|
-  data = table.raw
-  data.each do |row|
-    row.each do |cell|
-      within('#orders') do
-        page.assert_text cell
-      end
+  within('#orders') do
+    table.headers.each do |th|
+      assert page.has_xpath?("//th", :text => th, :count => 1)
     end
   end
+
+  assert page.has_css?("#orders tr", :count=>6)
 end

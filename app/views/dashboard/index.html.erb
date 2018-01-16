@@ -8,9 +8,11 @@
       <th>Date Created</th>
     </tr>
     <% @orders.each do |order| %>
+      <tr>
       <td><%= order.id %></td>
       <td><%= order.customer.name %></td>
       <td><%= order.created_at %></td>
+      </tr>
     <% end %>
   </table>
 </div>
