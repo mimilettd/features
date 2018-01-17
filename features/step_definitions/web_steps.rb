@@ -57,3 +57,16 @@ Then(/^I should see the sales channel 'Retail' reflected$/) do
     page.assert_no_text 'Online'
   end
 end
+
+When(/^I filter the list by 'Online' orders$/) do
+  click_button 'Sales Channel'
+  click_link 'Online'
+end
+
+Then(/^I should see Online orders$/) do
+  page.assert_text "Jane Doe"
+end
+
+Then(/^I should not see CX orders$/) do
+  page.assert_no_text "Mimi Le"
+end
