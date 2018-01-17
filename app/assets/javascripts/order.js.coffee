@@ -17,18 +17,33 @@ $ ->
 
     $form.prepend($hidden_input)
     product = $label[0].innerText.split('$')
-    product_name = product[0].replace(/ /g, '-')
-    product_price = product[1]
 
-    if $('#' + product_name).length
-      quantity = parseInt($('#' + product_name).attr("quantity")) + 1
-      updated_product_price = parseInt($('#' + product_name + 'price').text()) + parseInt(product_price)
-      $('#' + product_name).replaceWith("<span id='#{product_name}' quantity='#{quantity}'>(#{quantity}) #{product[0]}</span>")
-      $('#' + product_name + 'price').replaceWith("<span id='#{product_name}price'>#{updated_product_price.toFixed(2)}</span>")
-    else
-      $("#cart").append("<span id='#{product_name}' quantity='1'>#{product[0]}</span> $<span id='#{product_name}price'>#{product_price}</span></br>")
+    render_cart(product)
 
     $.each($form.find("input:hidden"), (index, value) ->
       $(this).attr('name', $(this).attr('name').replace(/\d+/g, index))
     )
   )
+
+  render_cart = (product) ->
+    parameterize_name = product[0].replace(/ /g, '-')
+    product_name = product[0]
+    product_price = product[1]
+
+    if $('#' + parameterize_name).length
+      quantity = parseInt($('#' + parameterize_name).attr("quantity")) + 1
+      updated_product_price = parseInt($('#' + parameterize_name + 'price').text()) + parseInt(product_price)
+
+      $('#' + parameterize_name).replaceWith(
+        "<span id='#{parameterize_name}' quantity='#{quantity}'>(#{quantity}) #{product_name}</span>"
+      )
+
+      $('#' + parameterize_name + 'price').replaceWith(
+        "<span id='#{parameterize_name}price'>#{updated_product_price.toFixed(2)}</span>"
+      )
+    else
+      $("#cart").append(
+        "<span id='#{parameterize_name}' quantity='1'>#{product_name}</span>
+        $<span id='#{parameterize_name}price'>#{product_price}</span></br>"
+      )
+
