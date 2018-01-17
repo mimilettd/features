@@ -10,4 +10,8 @@ class Order < ApplicationRecord
   def set_amount
     self.amount = line_items.map(&:product).map(&:cost).inject(:+)
   end
+
+  def self.sales_channel_keys
+    sales_channels.keys
+  end
 end

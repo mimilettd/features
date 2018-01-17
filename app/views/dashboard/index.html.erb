@@ -1,6 +1,14 @@
 <p><%= link_to 'Orders', '#', id: 'order_list' %></p>
 
 <div id="orders">
+  <div class="sales-channel-filter">
+    <span>Filter by <button class="dropbtn">Sales Channel</button></span>
+    <div class="dropdown-content">
+      <% Order.sales_channel_keys.each do |sales_channel| %>
+        <a href="#"><%= sales_channel %></a>
+      <% end %>
+    </div>
+  </div>
   <table>
     <tr>
       <th>Order Number</th>

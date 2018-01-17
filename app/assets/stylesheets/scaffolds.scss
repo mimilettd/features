@@ -82,3 +82,50 @@ div {
 label {
   display: block;
 }
+
+// dropdown
+
+.dropbtn {
+    //background-color: #37474f;
+    color: black;
+    padding: 5px;
+    font-size: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #757575;
+}
+
+.sales-channel-filter {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 5px;
+    text-decoration: none;
+    display: block;
+    font-size: 10px;
+}
+
+.dropdown-content a:hover {background-color: #f5f5f5}
+
+.sales-channel-filter:hover .dropdown-content {
+    display: block;
+}
+
+.sales-channel-filter:hover .dropbtn {
+    //background-color: #263238;
+}
