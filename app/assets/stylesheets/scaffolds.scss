@@ -101,6 +101,8 @@ label {
 .sales-channel-filter {
     position: relative;
     display: inline-block;
+    float: right;
+    margin-bottom: 10px;
 }
 
 .dropdown-content {
@@ -126,6 +128,20 @@ label {
     display: block;
 }
 
-.sales-channel-filter:hover .dropbtn {
-    //background-color: #263238;
+// table
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+div.root {
+  width: 500px;
 }
