@@ -31,6 +31,14 @@ $ ->
     product_price = product[1]
 
     if $('#' + parameterize_name).length
+      update_cart(parameterize_name, product_name, product_price)
+    else
+      $("#cart").append(
+        "<span id='#{parameterize_name}' quantity='1'>#{product_name}</span>
+        $<span id='#{parameterize_name}price'>#{product_price}</span></br>"
+      )
+
+  update_cart = (parameterize_name, product_name, product_price) ->
       quantity = parseInt($('#' + parameterize_name).attr("quantity")) + 1
       updated_product_price = parseInt($('#' + parameterize_name + 'price').text()) + parseInt(product_price)
 
@@ -41,9 +49,5 @@ $ ->
       $('#' + parameterize_name + 'price').replaceWith(
         "<span id='#{parameterize_name}price'>#{updated_product_price.toFixed(2)}</span>"
       )
-    else
-      $("#cart").append(
-        "<span id='#{parameterize_name}' quantity='1'>#{product_name}</span>
-        $<span id='#{parameterize_name}price'>#{product_price}</span></br>"
-      )
+
 
