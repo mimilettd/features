@@ -5,18 +5,18 @@
     <span>Filter by <button class="dropbtn">Sales Channel</button></span>
     <div class="dropdown-content">
       <% Order.sales_channel_keys.each do |sales_channel| %>
-        <a href="#"><%= sales_channel %></a>
+        <%= link_to sales_channel, '#', class: sales_channel.parameterize %>
       <% end %>
     </div>
   </div>
-  <table>
-    <tr>
+  <table id="order-table">
+    <tr class="header">
       <th>Order Number</th>
       <th>Customer</th>
       <th>Date Created</th>
     </tr>
     <% @orders.each do |order| %>
-      <tr>
+      <tr class="<%= order.sales_channel.parameterize %>">
       <td><%= order.id %></td>
       <td><%= order.customer.name %></td>
       <td><%= order.created_at %></td>

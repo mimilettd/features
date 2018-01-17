@@ -1,3 +1,4 @@
+@javascript
 Feature: Customer experience representative views orders list sorted by sales channel
   As a customer experience representative viewing the orders list
   I want to filter the order list by sales channel
